@@ -4,7 +4,9 @@ public class GroundTile : MonoBehaviour {
 
     GroundSpawner groundSpawner;
     [SerializeField] GameObject coinPrefab;
-    [SerializeField] GameObject obstaclePrefab;
+    [SerializeField] GameObject[] obstaclePrefab;
+
+    private int obstacleSpawnIndex;
 
     private void Start () {
         groundSpawner = GameObject.FindObjectOfType<GroundSpawner>();
@@ -18,18 +20,24 @@ public class GroundTile : MonoBehaviour {
 
     public void SpawnObstacle ()
     {
+        int obstaclePrefabNumber = Random.Range(0, obstaclePrefab.Length);
+        if (obstaclePrefabNumber == 0) {
+            obstacleSpawnIndex = Random.Range(2, 5);
+        } else if (obstaclePrefabNumber == obstaclePrefab.Length -1) {
+            obstacleSpawnIndex = Random.Range(5, 8);
+        }
         // Choose a random point to spawn the obstacle
-        int obstacleSpawnIndex = Random.Range(2, 5);
+      
         Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
-
+        
         // Spawn the obstace at the position
-        Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+        Instantiate(obstaclePrefab[obstaclePrefabNumber], spawnPoint.position, Quaternion.identity, transform);
     }
 
 
     public void SpawnCoins ()
     {
-        int coinsToSpawn = 10;
+        int coinsToSpawn = 3;
         for (int i = 0; i < coinsToSpawn; i++) {
             GameObject temp = Instantiate(coinPrefab, transform);
             temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());

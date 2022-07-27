@@ -3,6 +3,8 @@
 public class CameraFollow : MonoBehaviour {
 
     [SerializeField] Transform player;
+
+//     public float rotateSpeed = 1.2f;
     Vector3 offset;
 
 	private void Start () {
@@ -11,7 +13,8 @@ public class CameraFollow : MonoBehaviour {
 
 	private void Update () {
         Vector3 targetPos = player.position + offset;
-        targetPos.x = 0;
+        // targetPos.x = 0;
         transform.position = targetPos;
+        // RenderSettings.skybox.SetFloat("_Rotation", Time.time * rotateSpeed);
 	}
 }

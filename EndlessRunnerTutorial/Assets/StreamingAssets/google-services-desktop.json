@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "34218026719",
+    "project_id": "dinosaurun-f8f53",
+    "firebase_url": "dinosaurun-f8f53.firebaseio.com",
+    "storage_bucket": "dinosaurun-f8f53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34218026719:android:547a5185ea53b219136b6a",
+        "android_client_info": {
+          "package_name": "com.dinosarun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34218026719-votvlhhfcff3ntnv5ec5gvslrafo44i9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv-oeR778YwKNK-iC1qb-y7GDSx2tNWVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34218026719-votvlhhfcff3ntnv5ec5gvslrafo44i9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
